@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "programming-competition"
+    }
+  },
+  "defaultProject": "programming-competition",
+  "cli": {
+    "analytics": "9e57ed99-0391-41fb-bd61-5b05b7e12a8e"
+  }
 }
