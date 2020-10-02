@@ -10,8 +10,8 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    background-image: url("../assets/images/Widener.jpg");
-    /* background-color: blue; */
+    background-image: url("../assets/images/widener-logo.png");
+    /* background-color: #c8fdff; */
     opacity: .25;
     background-repeat: no-repeat;
     background-size: 100%;
