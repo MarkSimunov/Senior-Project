@@ -1,0 +1,18 @@
+<p>I am {{ name }} I am {{ getAge() }} years old</p>
+
+<button 
+    [disabled]="!buttonClick" 
+    (click)="onButtonClick()">
+    Click Me
+</button>
+
+<p [innerText]="buttonClick"></p>
+
+<p>{{buttonClickStatus}}</p>
+
+<input type="text" (input)="onUpdateInputText($event)">
+<p>{{textName}}</p>
+
+<ul>
+    <li *ngFor="let day of days">{{day}}</li>
+</ul>
