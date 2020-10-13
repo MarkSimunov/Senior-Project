@@ -6,13 +6,43 @@
     Click Me
 </button>
 
+
+
 <p [innerText]="buttonClick"></p>
 
 <p>{{buttonClickStatus}}</p>
 
-<input type="text" (input)="onUpdateInputText($event)">
-<p>{{textName}}</p>
+<!-- <input type="text" (input)="onUpdateInputText($event)">
+<p>{{textName}}</p> -->
+
+<input type="text" [(ngModel)]="textName">
+<!-- <p>{{textName}}</p> -->
+
+<br>
+<br>
+
+<button  
+    (click)="onAnotherButton()">
+    Click the button
+</button>
+
+<p 
+    *ngIf="anotherButton; else notClicked" 
+    [ngStyle]="{color: getColor()}"
+    [ngClass]="{testClass: anotherButton}"> 
+    You clicked this button 
+</p>
+<ng-template #notClicked> 
+    <p [ngStyle]="{color: getColor()}">You didn't click this button </p>
+</ng-template>
 
 <ul>
     <li *ngFor="let day of days">{{day}}</li>
 </ul>
+
+<button  
+    (click)="onAddLine()">
+    Add a line
+</button>
+
+<p *ngFor="let line of lineArray; let i = index">{{line}} {{i}} </p>
