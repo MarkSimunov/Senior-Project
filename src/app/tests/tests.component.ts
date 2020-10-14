@@ -24,7 +24,7 @@ export class TestsComponent implements OnInit {
   textName: string = 'text name'; 
   days: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", 
   "Thursday", "Friday", "Saturday"];
-  lineArray: string[] =[];
+  lineArray: string[] =[]; 
 
   getAge() {
     return this.age;
