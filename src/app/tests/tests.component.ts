@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-tests',
@@ -25,6 +25,7 @@ export class TestsComponent implements OnInit {
   days: string[] = ["Sunday", "Monday", "Tuesday", "Wednesday", 
   "Thursday", "Friday", "Saturday"];
   lineArray: string[] =[]; 
+
 
   getAge() {
     return this.age;
