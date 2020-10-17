@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'programming-competition';
-  childState: boolean = false;
+  childState: boolean = true;
 
   greet(name: string) {
     alert("How's it going " + name + "?");  }

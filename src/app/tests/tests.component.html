@@ -2,7 +2,7 @@
 
 <button 
     [disabled]="!buttonClick" 
-    (click)="onButtonClick()">
+    (click)="onButtonClick(textNameInput)">
     Click Me
 </button>
 
@@ -15,8 +15,11 @@
 <!-- <input type="text" (input)="onUpdateInputText($event)">
 <p>{{textName}}</p> -->
 
-<input type="text" [(ngModel)]="textName">
-<!-- <p>{{textName}}</p> -->
+<!-- <input type="text" [(ngModel)]="textName"> -->
+
+<input 
+    type="text" 
+    #textNameInput>
 
 <br>
 <br>

@@ -31,8 +31,8 @@ export class TestsComponent implements OnInit {
     return this.age;
   }
 
-  onButtonClick() {
-    this.buttonClickStatus = "Text in input tag is " + this.textName;
+  onButtonClick(nameInput: HTMLInputElement) {
+    this.buttonClickStatus = "Text in input tag is " + nameInput.value;
   }
 
   onUpdateInputText(event: Event) {
