@@ -14,3 +14,7 @@ a:link, a:visited {
 a:hover {
     color: violet;
 }
+
+div {
+    padding: 1rem;
+}
