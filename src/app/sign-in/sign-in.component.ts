@@ -12,4 +12,14 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  username: string = '';
+  password: string = '';
+
+  signIn() {
+    console.log(this.username);
+    console.log(this.password);
+
+    // We will be sending http requests in this method to firebase; will do later
+  }
+
 }

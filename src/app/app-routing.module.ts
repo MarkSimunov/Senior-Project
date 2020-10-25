@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CreateAccountComponent } from './create-account/create-account.component';
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
@@ -7,6 +8,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "sign-in", component: SignInComponent },
+  { path: "create-account", component: CreateAccountComponent },
   { path: "**", redirectTo: "/", pathMatch:"full"} //This needs to be the last route in the array
 ];
 
