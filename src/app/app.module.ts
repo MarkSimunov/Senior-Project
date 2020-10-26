@@ -9,6 +9,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { CreateAccountComponent } from './create-account/create-account.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AppComponent,
     SignInComponent,
     HomeComponent,
+    CreateAccountComponent,
 
   ],
   imports: [

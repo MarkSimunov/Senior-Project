@@ -1,3 +1,15 @@
 <div>
-    <p>sign-in works!</p>
+    <h1>Sign in to your account</h1>
+    <br>
+    <h3>Username</h3>
+    <input [(ngModel)]="username" type="text">
+    <br>
+    <br>
+    <h3>Password</h3>
+    <input [(ngModel)]="password" type="password">
+    <br>
+    <br>
+    <button (click)="signIn()">Sign in</button>
+    <a routerLink="/create-account"><button>Create Account</button></a>
+
 </div>
