@@ -1,1 +1,30 @@
-<p>create-account works!</p>
+<div>
+    <form  #createAccountForm="ngForm">
+
+        {{ createAccountForm.value | json }}
+        <!-- Above code is for testing purposes only, will not be included in final code -->
+
+        <h1>Create an account</h1>
+        <br>
+        <h3>Username</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter username here
+            </mat-label>
+            <input matInput [(ngModel)]="username" type="text" required name="userName" ngModel>
+        </mat-form-field>
+        <br>
+        <br>
+        <h3>Password</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter password here
+            </mat-label>
+            <input matInput [(ngModel)]="password" type="password" required name="passWord" ngModel>
+        </mat-form-field>
+        <br>
+        <br>
+        <button mat-button class="mat-raised-button" color="primary" (click)="createAccount()">Create Account</button>
+
+    </form>
+</div>
