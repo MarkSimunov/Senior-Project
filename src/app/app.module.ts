@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatButtonModule
 
   ],
   providers: [],
