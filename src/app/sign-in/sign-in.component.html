@@ -22,7 +22,7 @@
             <mat-label>
                 Enter password here
             </mat-label>
-            <input matInput [(ngModel)]="password" type="password" required name="passWord" ngModel>
+            <input matInput [(ngModel)]="password" type="password" required #pass="ngModel" name="passWord" ngModel>
         </mat-form-field>
         <br>
         <br>
