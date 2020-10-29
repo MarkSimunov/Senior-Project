@@ -1,8 +1,5 @@
 <div>
-    <form #signInForm="ngForm" (ngSubmit)="signIn()" novalidate>
-
-        {{ signInForm.value | json }}
-        <!-- Above code is for testing purposes only, will not be included in final code -->
+    <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)" novalidate>
 
         <h1>Sign in to your account</h1>
         <br>
@@ -11,7 +8,7 @@
             <mat-label>
                 Enter username here
             </mat-label>
-            <input matInput [(ngModel)]="username" type="text" required #name="ngModel" name="userName" ngModel>
+            <input matInput type="text" required #name="ngModel" name="userName" ngModel>
         </mat-form-field>
         <br>
         <small [hidden]="name.valid || name.untouched">Username not entered</small>
@@ -22,7 +19,7 @@
             <mat-label>
                 Enter password here
             </mat-label>
-            <input matInput [(ngModel)]="password" type="password" required #pass="ngModel" name="passWord" ngModel>
+            <input matInput type="password" required #pass="ngModel" name="passWord" ngModel>
         </mat-form-field>
         <br>
         <small [hidden]="pass.valid || pass.untouched">Password not entered</small>

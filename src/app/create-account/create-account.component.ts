@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { AccountService } from '../account.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-create-account',
@@ -7,18 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
 
-  username: string = '';
-  password: string = '';
-
-  createAccount() {
-    console.log(this.username);
-    console.log(this.password);
-
-    // We will be sending http requests in this method to firebase; will do later
+  createAccount(form: NgForm) {
+    const value = form.value;
+    const user = new User(value.userName, value.passWord);
+    console.log(user.username);
+    console.log(user.password);
+    this.accountService.createUser(user);
   }
 }
