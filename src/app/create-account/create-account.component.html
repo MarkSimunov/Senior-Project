@@ -14,6 +14,8 @@
             <input matInput [(ngModel)]="username" type="text" required #name="ngModel" name="userName" ngModel>
         </mat-form-field>
         <br>
+        <small [hidden]="name.valid || name.untouched">Username not entered</small>
+        <br>
         <br>
         <h3>Password</h3>
         <mat-form-field hideRequiredMarker appearance="outline" color="accent">
@@ -22,6 +24,8 @@
             </mat-label>
             <input matInput [(ngModel)]="password" type="password" required #pass="ngModel" name="passWord" ngModel>
         </mat-form-field>
+        <br>
+        <small [hidden]="pass.valid || pass.untouched">Password not entered</small>
         <br>
         <br>
         <button mat-button class="mat-raised-button" color="primary" (click)="createAccount()">Create Account</button>
