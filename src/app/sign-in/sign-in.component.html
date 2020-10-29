@@ -28,7 +28,11 @@
         <small [hidden]="pass.valid || pass.untouched">Password not entered</small>
         <br>
         <br>
-        <button mat-button class="mat-raised-button" color="primary" (click)="signIn()">Sign in</button>
-        <a routerLink="/create-account"><button mat-button class="mat-raised-button" color="primary">Create Account</button></a>
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="signInForm.form.invalid" type="submit" (click)="signIn()">Sign in</button>
+        <a routerLink="/create-account">
+            <button mat-button class="mat-raised-button" color="primary">Create Account</button>
+        </a>
+        
     </form> 
 </div>

@@ -28,7 +28,8 @@
         <small [hidden]="pass.valid || pass.untouched">Password not entered</small>
         <br>
         <br>
-        <button mat-button class="mat-raised-button" color="primary" (click)="createAccount()">Create Account</button>
+        <button mat-button class="mat-raised-button" color="primary" 
+        [disabled]="createAccountForm.form.invalid" type="submit" (click)="createAccount()">Create Account</button>
 
     </form>
 </div>
