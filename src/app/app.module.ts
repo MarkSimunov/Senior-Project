@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MaterialModule } from './material/material.module';
+import { AccountService } from './account.service';
 
 
 
@@ -29,7 +30,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 <div>
-    <form  #createAccountForm="ngForm">
+    <form  #createAccountForm="ngForm" (ngSubmit)="createAccount()" novalidate>
 
         {{ createAccountForm.value | json }}
         <!-- Above code is for testing purposes only, will not be included in final code -->
@@ -29,7 +29,7 @@
         <br>
         <br>
         <button mat-button class="mat-raised-button" color="primary" 
-        [disabled]="createAccountForm.form.invalid" type="submit" (click)="createAccount()">Create Account</button>
+        [disabled]="createAccountForm.form.invalid" type="submit">Create Account</button>
 
     </form>
 </div>

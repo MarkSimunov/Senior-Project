@@ -1,5 +1,5 @@
 <div>
-    <form #signInForm="ngForm">
+    <form #signInForm="ngForm" (ngSubmit)="signIn()" novalidate>
 
         {{ signInForm.value | json }}
         <!-- Above code is for testing purposes only, will not be included in final code -->
@@ -29,10 +29,10 @@
         <br>
         <br>
         <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="signInForm.form.invalid" type="submit" (click)="signIn()">Sign in</button>
+        [disabled]="signInForm.form.invalid" type="submit">Sign in</button>
         <a routerLink="/create-account">
             <button mat-button class="mat-raised-button" color="primary">Create Account</button>
         </a>
-        
+
     </form> 
 </div>
