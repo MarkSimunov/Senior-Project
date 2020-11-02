@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { MaterialModule } from './material/material.module';
+import { AccountService } from './account.service';
+
 
 
 @NgModule({
@@ -26,10 +28,9 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
-
+    MaterialModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

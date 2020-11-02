@@ -1,15 +1,35 @@
 <div>
-    <h1>Sign in to your account</h1>
-    <br>
-    <h3>Username</h3>
-    <input [(ngModel)]="username" type="text">
-    <br>
-    <br>
-    <h3>Password</h3>
-    <input [(ngModel)]="password" type="password">
-    <br>
-    <br>
-    <button (click)="signIn()">Sign in</button>
-    <a routerLink="/create-account"><button>Create Account</button></a>
+    <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)" novalidate>
 
+        <h1>Sign in to your account</h1>
+        <br>
+        <h3>Username</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter username here
+            </mat-label>
+            <input matInput type="text" required #name="ngModel" name="userName" ngModel>
+        </mat-form-field>
+        <br>
+        <small [hidden]="name.valid || name.untouched">Username not entered</small>
+        <br>
+        <br>
+        <h3>Password</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter password here
+            </mat-label>
+            <input matInput type="password" required #pass="ngModel" name="passWord" ngModel>
+        </mat-form-field>
+        <br>
+        <small [hidden]="pass.valid || pass.untouched">Password not entered</small>
+        <br>
+        <br>
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="signInForm.form.invalid" type="submit">Sign in</button>
+        <a routerLink="/create-account">
+            <button mat-button class="mat-raised-button" color="primary">Create Account</button>
+        </a>
+
+    </form> 
 </div>

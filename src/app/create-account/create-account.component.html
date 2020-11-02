@@ -1,1 +1,32 @@
-<p>create-account works!</p>
+<div>
+    <form  #createAccountForm="ngForm" (ngSubmit)="createAccount(createAccountForm)" novalidate>
+
+        <h1>Create an account</h1>
+        <br>
+        <h3>Username</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter username here
+            </mat-label>
+            <input matInput type="text" required #name="ngModel" name="userName" ngModel>
+        </mat-form-field>
+        <br>
+        <small [hidden]="name.valid || name.untouched">Username not entered</small>
+        <br>
+        <br>
+        <h3>Password</h3>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">
+            <mat-label>
+                Enter password here
+            </mat-label>
+            <input matInput type="password" required #pass="ngModel" name="passWord" ngModel>
+        </mat-form-field>
+        <br>
+        <small [hidden]="pass.valid || pass.untouched">Password not entered</small>
+        <br>
+        <br>
+        <button mat-button class="mat-raised-button" color="primary" 
+        [disabled]="createAccountForm.form.invalid" type="submit">Create Account</button>
+
+    </form>
+</div>
