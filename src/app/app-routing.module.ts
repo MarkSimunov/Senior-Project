@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "sign-in", component: SignInComponent },
   { path: "create-account", component: CreateAccountComponent },
-  {path: "about", component: AboutComponent }, 
+  { path: "about", component: AboutComponent }, 
   { path: "**", redirectTo: "/", pathMatch:"full"} //This needs to be the last route in the array
 ];
 
