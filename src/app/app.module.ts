@@ -7,6 +7,8 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MaterialModule } from './material/material.module';
@@ -22,6 +24,7 @@ import { AngularFireModule } from '@angular/fire';
     HomeComponent,
     CreateAccountComponent,
 
+    AboutComponent
   ],
   imports: [
     BrowserModule,
