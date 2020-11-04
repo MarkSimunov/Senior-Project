@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
-import { RouterModule } from '@angular/router'
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -28,12 +26,6 @@ import { AngularFireModule } from '@angular/fire';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: 'about', 
-        component: AboutComponent
-      }
-    ]), 
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
