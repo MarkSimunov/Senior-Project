@@ -2,4 +2,8 @@ button {
     margin-right: 1rem;
 }
 
+small {
+    color: tomato;
+}
+
 /* May want to put this into its own button styling css page; will decide later on */
