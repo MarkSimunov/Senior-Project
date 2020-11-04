@@ -1,0 +1,28 @@
+
+.about_page {
+    border: 10px outset yellow;
+    background-color: rgb(52, 152, 219);    
+    text-align: center;
+}
+
+.h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+}
+
+.h2 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+.p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-align: center;
+}
+
+.p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
