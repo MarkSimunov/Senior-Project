@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from '../account.service';
-import { User } from '../user';
+import { Auth } from '../auth';
 
 @Component({
   selector: 'app-sign-in',
@@ -17,10 +17,10 @@ export class SignInComponent implements OnInit {
 
   signIn(form: NgForm) {
     const value = form.value;
-    const user = new User(value.userName, value.passWord);
-    console.log(user.username);
-    console.log(user.password);
-    this.accountService.getUser(user);
+    const auth = new Auth(value.userName, value.passWord);
+    console.log(auth.username);
+    console.log(auth.password);
+    this.accountService.getUser(auth);
   }
 
 }

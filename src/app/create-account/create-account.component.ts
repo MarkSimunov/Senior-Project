@@ -10,6 +10,8 @@ import { User } from '../user';
 })
 export class CreateAccountComponent implements OnInit {
 
+  id: number = Math.floor(Math.random() * Number.MAX_VALUE);
+
   constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
@@ -17,9 +19,11 @@ export class CreateAccountComponent implements OnInit {
 
   createAccount(form: NgForm) {
     const value = form.value;
-    const user = new User(value.userName, value.passWord);
+    const user = new User(value.userName, value.passWord, 'general', this.id);
     console.log(user.username);
     console.log(user.password);
+    console.log('general');
+    console.log(this.id);
     this.accountService.createUser(user);
   }
 }
