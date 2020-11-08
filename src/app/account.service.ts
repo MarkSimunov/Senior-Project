@@ -13,10 +13,10 @@ export class AccountService {
   }
 
   createUser(user: User) {
-
+    return this.http.post('https://widenerprogrammingcontest.firebaseio.com/users.json', user);
   }
 
   getUser(auth: Auth) {
-    
+    return this.http.get('https://widenerprogrammingcontest.firebaseio.com/users.json')
   }
 }
