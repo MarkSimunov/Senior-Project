@@ -16,6 +16,8 @@ export class SignInComponent implements OnInit {
   }
 
   signIn(form: NgForm) {
+
+    //auth is not being used for the http request currently. This may be used if dealing with query params for get request
     const value = form.value;
     const auth = new Auth(value.userName, value.passWord);
     console.log(auth.username);
