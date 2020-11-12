@@ -18,11 +18,20 @@ export class AccountService {
     return this.http.post('https://widenerprogrammingcontest.firebaseio.com/users.json', user);
   }
 
-  getUser(auth: Auth) {
+  loginUser(auth: Auth) {
     return this.http.get('https://widenerprogrammingcontest.firebaseio.com/users.json');
   }
 
   loggedIn() {
     return !!localStorage.getItem('user');
   }
+
+  logoutUser() {
+    localStorage.removeItem('user');
+  }
+
+  getUser() {
+    return localStorage.getItem('user');
+  }
+  
 }

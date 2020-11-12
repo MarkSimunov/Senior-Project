@@ -22,7 +22,7 @@ export class SignInComponent implements OnInit {
     const auth = new Auth(value.userName, value.passWord);
     console.log(auth.username);
     console.log(auth.password);
-    this.accountService.getUser(auth)
+    this.accountService.loginUser(auth)
       .subscribe(
         data => console.log(data)
       )
