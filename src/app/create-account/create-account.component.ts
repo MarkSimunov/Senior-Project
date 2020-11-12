@@ -17,8 +17,8 @@ export class CreateAccountComponent implements OnInit {
 
   createAccount(form: NgForm) {
     const value = form.value;
-    const user = new User(value.userName, value.passWord);
-    console.log(user.username);
+    const user = new User(value.email, value.passWord);
+    console.log(user.email);
     console.log(user.password);
     this.accountService.createUser(user);
   }
