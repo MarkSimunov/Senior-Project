@@ -16,18 +16,26 @@ export class CreateAccountComponent implements OnInit {
   }
 
   id: number = Math.floor(Math.random() * Number.MAX_VALUE);
+  person: User;
 
   createAccount(form: NgForm) {
     const value = form.value;
-    const user = new User(value.userName, value.passWord, 'general', this.id);
+    const user = new User(value.userName, value.passWord, true, this.id);
     console.log(user.username);
     console.log(user.password);
-    console.log('general');
-    console.log(this.id);
+    console.log(user.isAdmin);
+    console.log(user.id);
     this.accountService.createUser(user)
       .subscribe(
-        data => console.log('Success', data),
+        data => {
+          console.log('Success', data);
+          localStorage.setItem('user', JSON.stringify(data));
+          let item = JSON.parse(localStorage.getItem('user'));
+        console.log(item);
+        },
         error => console.error('Error', error)
-      )
+      );
   }
+
+  //Use checkbox for admin; admin must put in password for create account to be valid
 }

@@ -21,4 +21,8 @@ export class AccountService {
   getUser(auth: Auth) {
     return this.http.get('https://widenerprogrammingcontest.firebaseio.com/users.json');
   }
+
+  loggedIn() {
+    return !!localStorage.getItem('user');
+  }
 }
