@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { User } from '../user';
@@ -9,6 +9,8 @@ import { User } from '../user';
   styleUrls: ['./create-account.component.css', '../app.component.css']
 })
 export class CreateAccountComponent implements OnInit {
+
+  @Output() loggedIn = new EventEmitter();
 
   constructor(private accountService: AccountService) { }
 
@@ -21,5 +23,6 @@ export class CreateAccountComponent implements OnInit {
     console.log(user.email);
     console.log(user.password);
     this.accountService.createUser(user);
+    this.loggedIn.emit();
   }
 }
