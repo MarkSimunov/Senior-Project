@@ -20,7 +20,7 @@ export class SignInComponent implements OnInit {
     const user = new User(value.email, value.passWord);
     console.log(user.email);
     console.log(user.password);
-    this.accountService.getUser(user);
+    this.accountService.signInUser(user);
   }
 
 }
