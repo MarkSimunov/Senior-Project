@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 import { User } from '../user';
 
@@ -12,7 +13,7 @@ export class SignInComponent implements OnInit {
 
   @Output() loggedIn = new EventEmitter();
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,6 @@ export class SignInComponent implements OnInit {
     console.log(user.password);
     this.accountService.signInUser(user);
     this.loggedIn.emit();
+    this.router.navigate(['/']);
   }
-
 }
