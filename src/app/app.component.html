@@ -7,7 +7,7 @@
         <a routerLink="">Home</a>
         <a *ngIf="!isSignedIn" routerLink="/sign-in">Sign In</a>
         <a *ngIf="!isSignedIn" routerLink="/create-account">Create Account</a>
-        <a routerLink="/app-about">About</a>
+        <a routerLink="/about">About</a>
         <a *ngIf="isSignedIn" href="" (click)="logout()">Logout</a>
     </div>
 </mat-toolbar>
