@@ -24,8 +24,4 @@ export class AppComponent {
     this.accountService.logout();
     this.isSignedIn = false;
   }
-
-  loggedIn() {
-    this.isSignedIn = true;
-  }
 }
