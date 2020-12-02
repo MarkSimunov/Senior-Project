@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../account.service';
 import { User } from '../user';
 
@@ -10,7 +11,7 @@ import { User } from '../user';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +21,7 @@ export class SignInComponent implements OnInit {
     const user = new User(value.email, value.passWord);
     console.log(user.email);
     console.log(user.password);
-    this.accountService.getUser(user);
+    this.accountService.signInUser(user);
+    setTimeout(() => this.router.navigate(['/']), 2000);
   }
-
 }

@@ -3,10 +3,11 @@
     <div class="insideNavbar">Widener Programming Contest</div>
     <div class="insideNavbar">
         <a routerLink="">Home</a>
-        <a routerLink="/sign-in">Sign In</a>
-        <a routerLink="/create-account">Create Account</a>
+        <a *ngIf="!isSignedIn" routerLink="/sign-in">Sign In</a>
+        <a *ngIf="!isSignedIn" routerLink="/create-account">Create Account</a>
+        <a *ngIf="isSignedIn" href="" (click)="logout()">Logout</a>
     </div>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<router-outlet (activate)="ngOnInit()"></router-outlet>
 
