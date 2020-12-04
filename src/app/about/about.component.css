@@ -8,3 +8,11 @@
 .h2 {
     text-align: center;
 }
+
+.center {
+    display: block;
+}
+
+.align {
+    display: block;
+}
