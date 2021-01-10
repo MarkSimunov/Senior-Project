@@ -38,4 +38,8 @@ export class AccountService {
     this.isLoggedIn = false;
   }
 
+  loggedIn() {
+    return !!localStorage.getItem('user');
+  }
+
 }
