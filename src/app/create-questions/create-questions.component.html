@@ -1,0 +1,48 @@
+<div>
+    <form #questionsForm="ngForm" (ngSubmit)="submitQuestions(questionsForm)" novalidate>
+
+        <h1>Submit Questions for Contest</h1>
+        <br>
+        <div *ngFor="let question of questions; let i = index">
+            <h2>Question {{i + 1}}</h2>
+            <mat-form-field>  
+                <mat-label>
+                    Enter Question {{i + 1}} here
+                </mat-label>
+                <textarea matInput name="" id="" cols="50" rows="5"></textarea>
+            </mat-form-field>
+            <br>
+            <mat-form-field>  
+                <mat-label>
+                    Test input 1
+                </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>  
+                <mat-label>
+                    Test output 1
+                </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>  
+                <mat-label>
+                    Test input 2
+                </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>  
+                <mat-label>
+                    Test output 2
+                </mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+        </div>
+
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="questionsForm.form.invalid" type="submit">Submit Questions</button>
+
+    </form>
+</div>
