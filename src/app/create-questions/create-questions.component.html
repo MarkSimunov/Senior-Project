@@ -5,39 +5,39 @@
         <br>
         <div *ngFor="let question of questions; let i = index">
             <h2>Question {{i + 1}}</h2>
-            <mat-form-field>  
+            <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
                 <mat-label>
                     Enter Question {{i + 1}} here
                 </mat-label>
-                <textarea matInput name="" id="" cols="50" rows="5"></textarea>
+                <textarea matInput required cols="50" rows="5" name="question" #ques="ngModel" ngModel></textarea>
             </mat-form-field>
             <br>
-            <mat-form-field>  
+            <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
                 <mat-label>
                     Test input 1
                 </mat-label>
-                <input matInput type="text">
+                <input matInput required type="text" name="input1" #in1="ngModel" ngModel>
             </mat-form-field>
             <br>
-            <mat-form-field>  
+            <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
                 <mat-label>
                     Test output 1
                 </mat-label>
-                <input matInput type="text">
+                <input matInput required type="text" name="output1" #out1="ngModel" ngModel>
             </mat-form-field>
             <br>
-            <mat-form-field>  
+            <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
                 <mat-label>
                     Test input 2
                 </mat-label>
-                <input matInput type="text">
-            </mat-form-field>
+                <input matInput required type="text" name="input2" #in2="ngModel" ngModel>
+            </mat-form-field >
             <br>
-            <mat-form-field>  
+            <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
                 <mat-label>
                     Test output 2
                 </mat-label>
-                <input matInput type="text">
+                <input matInput required type="text" name="output2" #out2="ngModel" ngModel>
             </mat-form-field>
         </div>
 

@@ -16,7 +16,8 @@ export class CreateQuestionsComponent implements OnInit {
   }
 
   submitQuestions(form :NgForm) {
-
+    const value = form.value;
+    console.log(value);
   }
 
 }
