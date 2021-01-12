@@ -5,12 +5,13 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { HomeComponent } from './home/home.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { AboutComponent } from './about/about.component';
+import { AccountGuard } from './account.guard';
 
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "sign-in", component: SignInComponent },
-  { path: "create-account", component: CreateAccountComponent },
+  { path: "sign-in", component: SignInComponent, canActivate: [AccountGuard] },
+  { path: "create-account", component: CreateAccountComponent, canActivate: [AccountGuard] },
   { path: "about", component: AboutComponent }, 
   { path: "**", redirectTo: "/", pathMatch:"full"} //This needs to be the last route in the array
 ];

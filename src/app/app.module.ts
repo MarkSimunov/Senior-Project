@@ -12,6 +12,7 @@ import { CreateAccountComponent } from './create-account/create-account.componen
 import { MaterialModule } from './material/material.module';
 import { AccountService } from './account.service';
 import { AngularFireModule } from '@angular/fire';
+import { AccountGuard } from './account.guard';
 
 
 
@@ -42,7 +43,7 @@ import { AngularFireModule } from '@angular/fire';
       measurementId: "G-WPPYRWP2J1"
     })
   ],
-  providers: [AccountService],
+  providers: [AccountService, AccountGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
