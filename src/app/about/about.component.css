@@ -5,6 +5,101 @@
     text-align: center;
 }
 
+.h1 {
+    text-align: left;
+    text-emphasis-color: white;
+}
+
+h1.a {
+    text-align: center;
+    text-size-adjust: 25px;
+}
+
+h2.b {
+    text-align: center;
+    font-size: 20px;
+}
+
+h4.c {
+    text-align: center;
+    font-size: 20px;
+}
+
+h5.d {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.e {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.f {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.g {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.h {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.i {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.j {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.k {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.l {
+    text-align: center;
+    font-size: 15px;
+}
+
+h6.m {
+    text-align: center;
+    font-size: 15px;
+}
+
+h6.n {
+    text-align: center;
+    font-size: 15px;
+}
+
+h6.o {
+    text-align: center;
+    font-size: 15px;
+}
+
+h6.p {
+    text-align: center;
+    font-size: 15px;
+}
+
+h6.q {
+    text-align: center;
+    font-size: 20px;
+}
+
+h6.r {
+    text-align: left;
+    font-size: 15px;
+}
+
 .h2 {
     text-align: center;
     margin-top: auto;
@@ -24,3 +119,11 @@
     margin-left: 30rem;
     margin-right: 30rem;
 }
+
+div.a {
+    text-align: left;
+}
+
+/* .background {
+    background-image: url(https://media4.picsearch.com/is?k-DtfnS5irfNJA-9uGGE6l-CIOdhwJwxiK-sZgVe7eQ&height=109);
+} */
