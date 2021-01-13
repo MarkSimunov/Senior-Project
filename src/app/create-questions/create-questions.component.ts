@@ -8,16 +8,26 @@ import { NgForm } from '@angular/forms';
 })
 export class CreateQuestionsComponent implements OnInit {
 
-  questions = new Array(8);
+  questionsArray = [];
+  questionNum: number = 1;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  submitQuestions(form :NgForm) {
-    const value = form.value;
-    console.log(value);
+  submitQuestions() {
+    if(this.questionsArray.length === 0) {
+      window.alert("There must be at least one question");
+    } else {
+      
+    }
+  }
+
+  addQuestionsToArray(form :NgForm){
+    this.questionsArray.push(form.value);
+    console.log(this.questionsArray);
+    this.questionNum++;
   }
 
 }
