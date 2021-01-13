@@ -10,7 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MaterialModule } from './material/material.module';
-import { AccountService } from './account.service';
+import { AccountService } from './services/account.service';
 import { AngularFireModule } from '@angular/fire';
 import { AccountGuard } from './account.guard';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';

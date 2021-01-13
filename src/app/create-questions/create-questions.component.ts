@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { QuestionsService } from '../services/questions.service';
 
 @Component({
   selector: 'app-create-questions',
@@ -11,22 +12,21 @@ export class CreateQuestionsComponent implements OnInit {
   questionsArray = [];
   questionNum: number = 1;
 
-  constructor() { }
+  constructor(private questionsService: QuestionsService) { }
 
   ngOnInit(): void {
   }
 
-  submitQuestions() {
-    if(this.questionsArray.length === 0) {
-      window.alert("There must be at least one question");
-    } else {
-      
-    }
+  submitQuestions(form :NgForm) {
+    this.questionsArray.push(form.value);
+    this.questionsService.postQuestions(this.questionsArray)
+      .subscribe(
+        data => window.alert('Questions submitted to database')
+      )
   }
 
   addQuestionsToArray(form :NgForm){
     this.questionsArray.push(form.value);
-    console.log(this.questionsArray);
     this.questionNum++;
   }
 

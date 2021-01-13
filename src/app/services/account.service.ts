@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { User } from './user';
+import { User } from '../user';
 import { AngularFireAuth } from '@angular/fire/auth'
 
 @Injectable({
