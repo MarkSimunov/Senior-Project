@@ -5,9 +5,8 @@
     text-align: center;
 }
 
-.h1 {
-    text-align: left;
-    text-emphasis-color: white;
+h2.h1 {
+    text-align: center;
 }
 
 h1.a {
