@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { QuestionsService } from '../services/questions.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CreateQuestionsComponent implements OnInit {
   questionsArray = [];
   questionNum: number = 1;
 
-  constructor(private questionsService: QuestionsService) { }
+  constructor(private questionsService: QuestionsService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +22,9 @@ export class CreateQuestionsComponent implements OnInit {
     this.questionsArray.push(form.value);
     this.questionsService.postQuestions(this.questionsArray)
       .subscribe(
-        data => window.alert('Questions submitted to database')
-      )
+        data => window.alert('Questions sucessfully submitted to database')
+      );
+      this.router.navigate(['/']);
   }
 
   addQuestionsToArray(form :NgForm){
