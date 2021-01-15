@@ -1,0 +1,50 @@
+<div>
+    <form #questionsForm="ngForm" (ngSubmit)="submitQuestions(questionsForm)" novalidate>
+
+        <h1>Submit Questions for Contest</h1>
+        <br>
+        
+        <h2>Question {{ questionNum }}</h2>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
+            <mat-label>
+                Enter Question {{ questionNum }} here
+            </mat-label>
+        <textarea matInput required cols="50" rows="5" name="question" #ques="ngModel" ngModel></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
+            <mat-label>
+                Test input 1
+            </mat-label>
+            <input matInput required type="text" name="input1" #in1="ngModel" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
+            <mat-label>
+                Test output 1
+            </mat-label>
+            <input matInput required type="text" name="output1" #out1="ngModel" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
+            <mat-label>
+                Test input 2
+            </mat-label>
+            <input matInput required type="text" name="input2" #in2="ngModel" ngModel>
+        </mat-form-field >
+        <br>
+        <mat-form-field hideRequiredMarker appearance="outline" color="accent">  
+            <mat-label>
+                Test output 2
+            </mat-label>
+            <input matInput required type="text" name="output2" #out2="ngModel" ngModel>
+        </mat-form-field>
+
+        <br>
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="questionsForm.form.invalid" type="reset" (click)="addQuestionsToArray(questionsForm)">Enter Another Question</button>
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="questionsForm.form.invalid" type="submit">Submit Questions</button>
+
+    </form>
+</div>

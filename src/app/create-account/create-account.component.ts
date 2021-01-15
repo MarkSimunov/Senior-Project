@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AccountService } from '../account.service';
+import { AccountService } from '../services/account.service';
 import { User } from '../user';
 
 @Component({
@@ -19,8 +19,6 @@ export class CreateAccountComponent implements OnInit {
   createAccount(form: NgForm) {
     const value = form.value;
     const user = new User(value.email, value.passWord);
-    console.log(user.email);
-    console.log(user.password);
     this.accountService.createUser(user);
     setTimeout(() => this.router.navigate(['/']), 2000);
   }
