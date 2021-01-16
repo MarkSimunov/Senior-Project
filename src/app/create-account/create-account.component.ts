@@ -19,7 +19,12 @@ export class CreateAccountComponent implements OnInit {
   createAccount(form: NgForm) {
     const value = form.value;
     const user = new User(value.email, value.passWord);
-    this.accountService.createUser(user);
-    setTimeout(() => this.router.navigate(['/']), 2000);
+    if (value.email.includes('widener.edu')) {
+      this.accountService.createUser(user);
+      setTimeout(() => this.router.navigate(['/']), 2000);
+    } else {
+      window.alert('Must include valid email address');
+    }
+    
   }
 }
