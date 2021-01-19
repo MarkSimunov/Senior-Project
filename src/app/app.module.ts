@@ -14,6 +14,7 @@ import { AccountService } from './services/account.service';
 import { AngularFireModule } from '@angular/fire';
 import { AccountGuard } from './account.guard';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
+import { ChooseQuestionsComponent } from './choose-questions/choose-questions.component';
 
 
 
@@ -26,6 +27,7 @@ import { CreateQuestionsComponent } from './create-questions/create-questions.co
     HomeComponent,
     CreateAccountComponent,
     CreateQuestionsComponent,
+    ChooseQuestionsComponent,
   ],
   imports: [
     BrowserModule,
