@@ -1,7 +1,20 @@
 <div>
-    <ul *ngFor="let question of questions">
-        <li>
-            <h1>{{ question.question }}</h1>
-        </li>
-    </ul>
+    <h1>Choose which set of questions you want to answer</h1>
+
+    <!-- <div *ngFor='let set of [].constructor(questionsAmount); let i = index'>
+        {{i}}
+        <br>
+        <p *ngFor='let subset of [].constructor(questionSets[i]?.length); let j = index'>
+            {{questionSets[i][j].question}}
+        </p>
+    </div> -->
+
+    <div *ngFor='let set of questionSets; let i = index'>
+        <div *ngIf=''>
+
+        </div>
+        {{set[0].input2}}
+        <br>
+        {{i}}
+    </div>
 </div>

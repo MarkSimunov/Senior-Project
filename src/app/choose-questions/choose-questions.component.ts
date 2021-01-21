@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators'
 })
 export class ChooseQuestionsComponent implements OnInit {
 
-  questions = [];
+  questionSets = [];
+  questionsAmount: number;
 
   constructor(private questionsService: QuestionsService) { }
 
@@ -25,10 +26,11 @@ export class ChooseQuestionsComponent implements OnInit {
         return postsArray;
       }))
       .subscribe(data => {
-        console.log(data);
-        this.questions = data;
-        console.log(this.questions);
-        
+        this.questionSets = data;
+        console.log(this.questionSets);
+        console.log(this.questionSets[0])
+        this.questionsAmount = this.questionSets.length;
+        console.log(this.questionsAmount)
       });
   }
 
