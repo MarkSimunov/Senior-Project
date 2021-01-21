@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
+import { map } from 'rxjs/operators'
 
 @Component({
   selector: 'app-choose-questions',
@@ -14,7 +15,21 @@ export class ChooseQuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionsService.getQuestions()
-      .subscribe(data => this.questions = data);
+      .pipe(map(responseData => {
+        const postsArray = [];
+        for (const key in responseData) {
+          if(responseData.hasOwnProperty(key)) {
+            postsArray.push({ ...responseData[key], id:key })
+          }
+        }
+        return postsArray;
+      }))
+      .subscribe(data => {
+        console.log(data);
+        this.questions = data;
+        console.log(this.questions);
+        
+      });
   }
 
 }
