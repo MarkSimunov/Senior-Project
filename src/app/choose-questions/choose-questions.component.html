@@ -10,11 +10,13 @@
     </div> -->
 
     <div *ngFor='let set of questionSets; let i = index'>
-        <div *ngIf=''>
+        {{set[0].question}}
+        {{set[1].question}}
+        <!-- <span *ngFor='let subset of set[i]; let j = index'>
 
-        </div>
-        {{set[0].input2}}
+        </span> -->
+        <!-- {{set[0].input2}} -->
         <br>
-        {{i}}
+        <!-- {{i}} -->
     </div>
 </div>
