@@ -10,8 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { MaterialModule } from './material/material.module';
-import { AccountService } from './account.service';
+import { AccountService } from './services/account.service';
 import { AngularFireModule } from '@angular/fire';
+import { AccountGuard } from './account.guard';
+import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 
 
 
@@ -23,6 +25,7 @@ import { AngularFireModule } from '@angular/fire';
     SignInComponent,
     HomeComponent,
     CreateAccountComponent,
+    CreateQuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { AngularFireModule } from '@angular/fire';
       measurementId: "G-WPPYRWP2J1"
     })
   ],
-  providers: [AccountService],
+  providers: [AccountService, AccountGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
