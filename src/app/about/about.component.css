@@ -99,6 +99,11 @@ h6.r {
     font-size: 15px;
 }
 
+h6.s {
+  text-align: left;
+  font-size: 15px;
+}
+
 .h2 {
     text-align: center;
     margin-top: auto;
@@ -119,7 +124,7 @@ h6.r {
     margin-right: 30rem;
 }
 
-div.a {
+div.a, b {
     text-align: left;
 }
 
