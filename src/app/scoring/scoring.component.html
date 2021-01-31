@@ -1,0 +1,25 @@
+<div>
+    <form #scoresForm="ngForm" (ngSubmit)="submitQuestions(scoresForm)" novalidate>
+
+        <h1>Calculate Scores</h1>
+        <br>
+        
+
+        <div class="contest-start-time">
+            <input placeholder="Contest Start Time" aria-label="start time" [ngxTimepicker]="default" readonly>
+            <ngx-material-timepicker #start></ngx-material-timepicker>
+       </div>
+        <br>
+
+       <h2>Question {{ questionNum }}</h2>
+       <mat-form-field class="submitted-picker" hideRequiredMarker appearance="outline" color="accent">  
+            <input placeholder="Time Submitted" aria-label="12hr format" [ngxTimepicker]="default" readonly>
+            <ngx-material-timepicker #default></ngx-material-timepicker>
+       </mat-form-field>
+
+       <br>
+        <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="scoresForm.form.invalid" type="submit">Calculate Total</button>
+
+    </form>
+</div>
