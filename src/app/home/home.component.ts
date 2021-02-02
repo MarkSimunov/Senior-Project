@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   var form = document.getElementById("form");
   var credits = document.getElementById("credits");
   var output = document.getElementById("output");
-  
   output.innerHTML = "Loading...";
   
   console.log(stdin.value);
@@ -31,8 +30,8 @@ export class HomeComponent implements OnInit {
   var obj = {};
   obj["clientId"] = "9fe609c51ebd966aece4ebc64f31df";
   obj["clientSecret"] = "2a06845915a4a93839ee2427895e0974ebd5781cb8ba74fc07a32d7c7c15c3ff";
-  obj["script"] = "import java.util.*;\r\npublic class Squarenum {\r\n\t\r\n\tpublic static void main(String args[]) {\r\n\t\tScanner x = new Scanner(System.in);\r\n\t\tint y = x.nextInt();\r\n\t\tint z = y*y;\r\n\t\tSystem.out.println(\"Square of \"+y+\" is \"+z);\r\n\t}\r\n\r\n}\r\n";
-  obj["language"] = "java";
+  obj["script"] = "#include <stdio.h>\r\nint main(){\r\n        int i;\r\n        scanf(\"%d\", &i);\r\n        if(i%2 == 0){\r\n                printf(\"%d is even \\n\", i);\r\n        } else {\r\n                printf(\"%d is odd \\n\", i);\r\n        }\r\n        return 0;\r\n}\r\n";
+  obj["language"] = "c";
   obj["versionIndex"] = "0";
   obj["stdin"] = stdin.value;
   var jsonStr = JSON.stringify(obj);
