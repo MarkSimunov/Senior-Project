@@ -7,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  code: string
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   submitQuestion() {
-    var run = document.getElementById("run");
+
+  let code: string = this.code;
+
+  console.log(code);
+  
+  var run = document.getElementById("run");
 
   run.addEventListener("click", function (e) {
   
@@ -26,15 +33,30 @@ export class HomeComponent implements OnInit {
   output.innerHTML = "Loading...";
   
   console.log(stdin.value);
+
+  console.log(document.getElementById('code').textContent);
   
   var obj = {};
   obj["clientId"] = "9fe609c51ebd966aece4ebc64f31df";
   obj["clientSecret"] = "2a06845915a4a93839ee2427895e0974ebd5781cb8ba74fc07a32d7c7c15c3ff";
-  obj["script"] = "#include <stdio.h>\r\nint main(){\r\n        int i;\r\n        scanf(\"%d\", &i);\r\n        if(i%2 == 0){\r\n                printf(\"%d is even \\n\", i);\r\n        } else {\r\n                printf(\"%d is odd \\n\", i);\r\n        }\r\n        return 0;\r\n}\r\n";
-  obj["language"] = "c";
+  obj["script"] = code;
+  obj["language"] = (<HTMLSelectElement>document.getElementById('language')).value;
   obj["versionIndex"] = "0";
   obj["stdin"] = stdin.value;
   var jsonStr = JSON.stringify(obj);
+
+  const jsonStrChars = [...jsonStr];
+
+  for(let i = 0; i < jsonStr.length; i++){
+    if (jsonStr.charAt(i) === '\\' ) {
+      jsonStrChars[i] = '';
+      i++;
+    }
+  }
+
+  jsonStr = jsonStrChars.join(''); 
+
+  console.log(jsonStrChars)
   
   console.log(jsonStr);
   
@@ -85,5 +107,10 @@ export class HomeComponent implements OnInit {
   
 });
   }
+
+  setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substring(0,index) + chr + str.substring(index+1);
+}
 
 }

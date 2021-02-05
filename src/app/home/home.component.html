@@ -13,7 +13,31 @@
     <p>Test change</p>
 
     <p>hello</p>
+
+    <p>Below is the API we would want to use for the project. It's location on the home page is temporary for testing purposes.</p>
       
+    <br>
+
+    <label for="language">Select which language to run the program in </label>
+    <br>
+    <select name="language" id="language">
+      <option value="java">Java</option>
+      <option value="c">C</option>
+      <option value="python2">Python 2</option>
+      <option value="python3">Python 3</option>
+    </select>
+    <br>
+    <br>
+
+    <a target="_blank" rel="noopener noreferrer" id="escapeLink" 
+      href="https://www.freeformatter.com/java-dotnet-escape.html">Format code for character escape in link here</a>
+
+    <br>
+
+    <textarea [(ngModel)]="code" id="code" name="code" placeholder="Paste formatted code here" cols="30" rows="10"></textarea>
+
+    <br>
+
       <input type="text" id="stdin"/>
       <p id="credits"></p>
       <form id="form" (ngSubmit)="submitQuestion()">
