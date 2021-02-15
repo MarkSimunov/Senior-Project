@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   
   var obj = {};
   obj["clientId"] = "9fe609c51ebd966aece4ebc64f31df";
-  obj["clientSecret"] = "2a06845915a4a93839ee2427895e0974ebd5781cb8ba74fc07a32d7c7c15c3ff";
+  obj["clientSecret"] = "3931d54efa8927a1c2051cacbbe107fdd22b72b43d8b330893bc4b6e63f45680";
   obj["script"] = code;
   obj["language"] = (<HTMLSelectElement>document.getElementById('language')).value;
   obj["versionIndex"] = "0";
