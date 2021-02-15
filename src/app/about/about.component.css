@@ -19,7 +19,7 @@ h6.lunch, .winning_team, .more_contest_rules, .orientation, .registration {
     font-size: 15px;
 }
 
-h6.materials_info, .computer_info {
+h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .standings_info, .prize_info {
     text-align: left;
     font-size: 15px;
 }
@@ -38,6 +38,6 @@ h6.materials_info, .computer_info {
     margin-right: 30rem;
 }
 
-div.computer, .materials {
+div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
     text-align: left;
 }
