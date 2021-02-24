@@ -1,25 +1,25 @@
 <div>
-    <form #scoresForm="ngForm" (ngSubmit)="submitQuestions(scoresForm)" novalidate>
+    <h1>Calculate Scores</h1>
+    <br> 
+    <div class="start">
+        <label for="start">Select the competition start time: </label>
+        <input type="time" id="start" name="start" [(ngModel)] = "startTime">
+   </div>
 
-        <h1>Calculate Scores</h1>
-        <br>
-        
-
-        <div class="contest-start-time">
-            <input placeholder="Contest Start Time" aria-label="start time" [ngxTimepicker]="default" readonly>
-            <ngx-material-timepicker #start></ngx-material-timepicker>
-       </div>
-        <br>
+    <form #scoresForm="ngForm" (ngSubmit)="submitScores(scoresForm)" novalidate>
 
        <h2>Question {{ questionNum }}</h2>
-       <mat-form-field class="submitted-picker" hideRequiredMarker appearance="outline" color="accent">  
-            <input placeholder="Time Submitted" aria-label="12hr format" [ngxTimepicker]="default" readonly>
-            <ngx-material-timepicker #default></ngx-material-timepicker>
-       </mat-form-field>
+        <div class="question">
+            <label for="question">Select time question submitted: </label>
+            <input type="time" id="question" name="question">
+       </div>
 
        <br>
+       <button mat-button class="mat-raised-button" color="primary"
+        [disabled]="scoresForm.form.invalid" type="reset" onclick="addTimesToArray(scoresForm)">Score Another Question</button>
         <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="scoresForm.form.invalid" type="submit">Calculate Total</button>
+        [disabled]="scoresForm.form.invalid" type="submit">Calculate Total Score</button>
 
+        <h3>Score: {{ score }}</h3>
     </form>
 </div>

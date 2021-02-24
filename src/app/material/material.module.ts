@@ -5,10 +5,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { MatTableModule } from '@angular/material/table';
 
-//Timepicker is not an angular component, but it functions similarly to one. 
-//This can be moved if necessary.
-import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-
 const MaterialComponents = [
   MatToolbarModule,
   MatButtonModule,
@@ -20,7 +16,6 @@ const MaterialComponents = [
 @NgModule({
   imports: [
     MaterialComponents,
-    NgxMaterialTimepickerModule
   ],
   exports: [
     MaterialComponents
