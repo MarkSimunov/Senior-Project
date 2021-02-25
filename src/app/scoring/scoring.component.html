@@ -15,8 +15,9 @@
        </div>
 
        <br>
+       <!-- Below in the html you used the onclick method rather then a click listener. I changed it to get it working -->
        <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="scoresForm.form.invalid" type="reset" onclick="addTimesToArray(scoresForm)">Score Another Question</button>
+        [disabled]="scoresForm.form.invalid" type="reset" (click)="addTimesToArray(scoresForm)">Score Another Question</button>
         <button mat-button class="mat-raised-button" color="primary"
         [disabled]="scoresForm.form.invalid" type="submit">Calculate Total Score</button>
 

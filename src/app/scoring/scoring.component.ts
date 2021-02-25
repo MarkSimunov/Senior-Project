@@ -14,7 +14,7 @@ export class ScoringComponent implements OnInit {
   questionNum: number = 1;
 
   startTime: Time;
-  submissionTimes: Time[];
+  submissionTimes: Time[] = []; //You did not have your submissionTimes array set equal to an empty array. I have it set up here
 
   constructor(private router: Router) { }
 
@@ -23,16 +23,19 @@ export class ScoringComponent implements OnInit {
 
   submitScores(form :NgForm) {
     this.submissionTimes.push(form.value);
+    console.log(this.submissionTimes); //Added for testing purposes
     this.score = this.calculateTotal();
   }
 
   addTimesToArray(form :NgForm){
     this.submissionTimes.push(form.value);
+    console.log(this.submissionTimes); //Added for testing purposes
     this.questionNum++;
   }
 
   calculateTotal(): number {
       let result = 0;
+      //There should be another check to determine whether or not any of the values in the submissionTimes array is undefined
       if (this.submissionTimes === undefined || this.submissionTimes.length == 0) {
           return -1;
       } else {
