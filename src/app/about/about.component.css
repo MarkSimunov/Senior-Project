@@ -1,27 +1,27 @@
 h1.programming_intro {
     text-align: center;
-    text-size-adjust: 25px;
+    text-size-adjust: 1.5625rem;
 }
 
 h2.date {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 h6.third_place, .contest_rules, .schedule, .second_place, .first_place, .contest_winners, .prizes, 
 .third_prize, .second_prize, .first_prize {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 h6.lunch, .winning_team, .more_contest_rules, .orientation, .registration {
     text-align: center;
-    font-size: 15px;
+    font-size: .9375rem;
 }
 
 h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .standings_info, .prize_info {
     text-align: left;
-    font-size: 15px;
+    font-size: .9375rem;
 }
 
 .h2 {
