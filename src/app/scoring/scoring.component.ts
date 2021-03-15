@@ -13,7 +13,7 @@ export class ScoringComponent implements OnInit {
   questionNum = 1;
 
   startTime: Time;
-  submissionTimes: Time[] = []; // You did not have your submissionTimes array set equal to an empty array. I have it set up here
+  submissionTimes: Time[] = [];
 
   ngOnInit(): void {
   }
@@ -21,19 +21,16 @@ export class ScoringComponent implements OnInit {
   submitScores(form: NgForm) {
     this.startTime = form.value.start;
     this.submissionTimes.push(form.value.qTime);
-    console.log(this.submissionTimes); // Added for testing purposes
     this.score = this.calculateTotal();
   }
 
   addTimesToArray(form: NgForm){
     this.submissionTimes.push(form.value.qTime);
-    // console.log(this.submissionTimes); // Added for testing purposes
     this.questionNum++;
   }
 
   calculateTotal(): number {
       let result = 0;
-      // There should be another check to determine whether or not any of the values in the submissionTimes array is undefined
       if (this.submissionTimes === undefined || this.submissionTimes.length === 0) {
           return -1;
       } else {
@@ -53,11 +50,10 @@ export class ScoringComponent implements OnInit {
     if (startTime == null || submitTime == null) {
       return 0;
     } else {
-      // console.log(submitTime, submitTime.hours);
       const hours = submitArray[0] - startArray[0];
       const minutes = submitArray[1] - startArray[1];
 
-      totalMinutes = (hours / 60) + minutes;
+      totalMinutes = (hours * 60) + minutes;
     }
     return totalMinutes;
   }
