@@ -8,10 +8,33 @@ h2.date {
     font-size: 1.25rem;
 }
 
-h6.third_place, .contest_rules, .schedule, .second_place, .first_place, .contest_winners, .prizes, 
-.third_prize, .second_prize, .first_prize {
+h6.contest_rules, .schedule {
     text-align: center;
     font-size: 1.25rem;
+}
+
+h6.prizes, .contest_winners {
+    text-align: center;
+    font-size: 1.25rem;
+    color: crimson;
+}
+
+h6.third_prize, .third_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:blueviolet;
+}
+
+h4.first_prize, .first_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:darkgreen;
+}
+
+h5.second_prize, .second_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:darkgoldenrod;
 }
 
 h6.lunch, .winning_team, .more_contest_rules, .orientation, .registration {
