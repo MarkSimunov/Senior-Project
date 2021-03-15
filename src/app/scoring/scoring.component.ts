@@ -1,7 +1,6 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-scoring',
@@ -11,56 +10,68 @@ import { Router } from '@angular/router';
 export class ScoringComponent implements OnInit {
 
   score: number;
-  questionNum: number = 1;
+  questionNum = 1;
 
   startTime: Time;
-  submissionTimes: Time[] = []; //You did not have your submissionTimes array set equal to an empty array. I have it set up here
-
-  constructor(private router: Router) { }
+  submissionTimes: Time[] = []; // You did not have your submissionTimes array set equal to an empty array. I have it set up here
 
   ngOnInit(): void {
   }
 
-  submitScores(form :NgForm) {
-    this.submissionTimes.push(form.value);
-    console.log(this.submissionTimes); //Added for testing purposes
+  submitScores(form: NgForm) {
+    this.startTime = form.value.start;
+    this.submissionTimes.push(form.value.qTime);
+    console.log(this.submissionTimes); // Added for testing purposes
     this.score = this.calculateTotal();
   }
 
-  addTimesToArray(form :NgForm){
-    this.submissionTimes.push(form.value);
-    console.log(this.submissionTimes); //Added for testing purposes
+  addTimesToArray(form: NgForm){
+    this.submissionTimes.push(form.value.qTime);
+    // console.log(this.submissionTimes); // Added for testing purposes
     this.questionNum++;
   }
 
   calculateTotal(): number {
       let result = 0;
-      //There should be another check to determine whether or not any of the values in the submissionTimes array is undefined
-      if (this.submissionTimes === undefined || this.submissionTimes.length == 0) {
+      // There should be another check to determine whether or not any of the values in the submissionTimes array is undefined
+      if (this.submissionTimes === undefined || this.submissionTimes.length === 0) {
           return -1;
       } else {
-          for(let i of this.submissionTimes) {
-            //temporary just to display SOMETHING
-            result += 1;
-            //result += this.getMinutes(this.startTime, i);
+          for (const i of this.submissionTimes) {
+            // console.log(this.getHoursMinutes(this.startTime));
+            result += this.convertToMinutes(this.startTime, i);
           }
       }
       return result;
   }
 
-  //this can be so much simpler, this will be updated once everything else works
-  /*
-  getMinutes(startTime: Time, submitTime: Time): number {
-    let minutes = 0;
-    //Create new date objects so that we can subtract the two
-    let start: Date = new Date(2020, 0O4, 0O2, startTime.hours, startTime.minutes, 0, 0);  
-    let submit: Date = new Date(2020, 0O4, 0O2, submitTime.hours, submitTime.minutes, 0, 0); 
-    
-    //answer is in milliseconds, divide by 60000 to convert to minutes
-    minutes = (submit.getTime() - start.getTime())/60000;
+  // Double check how well this works
+  convertToMinutes(startTime: Time, submitTime: Time): number {
+    const submitArray = this.getHoursMinutes(submitTime);
+    const startArray = this.getHoursMinutes(startTime);
+    let totalMinutes = 0;
+    if (startTime == null || submitTime == null) {
+      return 0;
+    } else {
+      // console.log(submitTime, submitTime.hours);
+      const hours = submitArray[0] - startArray[0];
+      const minutes = submitArray[1] - startArray[1];
 
-    return minutes;
+      totalMinutes = (hours / 60) + minutes;
+    }
+    return totalMinutes;
   }
-*/
+
+  // this can, in theory, be replaced with .hours/.minutes, however they are returning 'undefined'
+  getHoursMinutes(time: Time): number[] {
+    const timeArray: number[] = [];
+
+    const timeSA = time.toString().split(':', 2);
+    for (const item of timeSA){
+      const no: number = Number(item);
+      timeArray.push(no);
+    }
+    return timeArray;
+  }
 
 }

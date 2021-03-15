@@ -1,23 +1,23 @@
 <div>
-    <h1>Calculate Scores</h1>
-    <br> 
-    <div class="start">
-        <label for="start">Select the competition start time: </label>
-        <input type="time" id="start" name="start" [(ngModel)] = "startTime">
-   </div>
 
     <form #scoresForm="ngForm" (ngSubmit)="submitScores(scoresForm)" novalidate>
 
+      <h1>Calculate Scores</h1>
+      <br>
+      <div class="start">
+        <label for="start">Select the competition start time: </label>
+        <input required type="time" id="start" name="start" #start="ngModel" ngModel>
+      </div>
+
        <h2>Question {{ questionNum }}</h2>
-        <div class="question">
-            <label for="question">Select time question submitted: </label>
-            <input type="time" id="question" name="question">
+        <div class="qTime">
+            <label for="qTime">Select time question submitted: </label>
+            <input type="time" id="qTime" name="qTime" #qTime="ngModel" ngModel>
        </div>
 
        <br>
-       <!-- Below in the html you used the onclick method rather then a click listener. I changed it to get it working -->
        <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="scoresForm.form.invalid" type="reset" (click)="addTimesToArray(scoresForm)">Score Another Question</button>
+        [disabled]="scoresForm.form.invalid" type="button" (click)="addTimesToArray(scoresForm)">Score Another Question</button>
         <button mat-button class="mat-raised-button" color="primary"
         [disabled]="scoresForm.form.invalid" type="submit">Calculate Total Score</button>
 
