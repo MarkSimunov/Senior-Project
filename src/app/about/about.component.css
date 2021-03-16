@@ -5,10 +5,6 @@
     text-align: center;
 }
 
-.h2 {
-    text-align: center;
-}
-
 .tech-slideshow {
     height: 235px;
     max-width: 770px;
@@ -46,3 +42,70 @@
       transform: translateX(-66.6666%);  
     }
   }
+
+  h1.programming_intro {
+    text-align: center;
+    text-size-adjust: 1.5625rem;
+}
+
+h2.date {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+h6.contest_rules, .schedule {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+h6.prizes, .contest_winners {
+    text-align: center;
+    font-size: 1.25rem;
+    color: crimson;
+}
+
+h6.third_prize, .third_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:blueviolet;
+}
+
+h4.first_prize, .first_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:darkgreen;
+}
+
+h5.second_prize, .second_place {
+    text-align: center;
+    font-size: 1.25rem;
+    color:darkgoldenrod;
+}
+
+h6.lunch, .winning_team, .more_contest_rules, .orientation, .registration {
+    text-align: center;
+    font-size: .9375rem;
+}
+
+h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .standings_info, .prize_info {
+    text-align: left;
+    font-size: .9375rem;
+}
+
+.h2 {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center, .align {
+    display: block;
+    margin-left: 30rem;
+    margin-right: 30rem;
+}
+
+div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
+    text-align: left;
+}
