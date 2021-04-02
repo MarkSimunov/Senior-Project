@@ -22,5 +22,18 @@
         [disabled]="scoresForm.form.invalid" type="submit">Calculate Total Score</button>
 
         <h3>Score: {{ score }}</h3>
+        <br>
+        <h3 [hidden]=hide></h3>
+
+        <table>
+          <tr>
+            <th>Questions Submitted</th>
+            <th>Current Score</th>
+          </tr>
+          <tr *ngFor="let sc of scoreArray; index as i">
+            <th>{{ i + 1 }}</th>
+            <th>{{ sc }}</th>
+          </tr>
+        </table>
     </form>
 </div>

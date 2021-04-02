@@ -11,6 +11,8 @@ export class ScoringComponent implements OnInit {
 
   score: number;
   questionNum = 1;
+  hide: boolean = false;
+  scoreArray: number[] = [];
 
   startTime: Time;
   submissionTimes: Time[] = [];
@@ -18,15 +20,18 @@ export class ScoringComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addTimesToArray(form: NgForm){
+    this.startTime = form.value.start;
+    this.submissionTimes.push(form.value.qTime);
+    this.questionNum++;
+    this.scoreArray.push(this.calculateTotal());
+  }
+
   submitScores(form: NgForm) {
     this.startTime = form.value.start;
     this.submissionTimes.push(form.value.qTime);
     this.score = this.calculateTotal();
-  }
-
-  addTimesToArray(form: NgForm){
-    this.submissionTimes.push(form.value.qTime);
-    this.questionNum++;
+    this.scoreArray.push(this.score);
   }
 
   calculateTotal(): number {
@@ -35,7 +40,6 @@ export class ScoringComponent implements OnInit {
           return -1;
       } else {
           for (const i of this.submissionTimes) {
-            // console.log(this.getHoursMinutes(this.startTime));
             result += this.convertToMinutes(this.startTime, i);
           }
       }
