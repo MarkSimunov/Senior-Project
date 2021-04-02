@@ -1,3 +1,8 @@
 button {
     margin-right: 1rem;
 }
+
+table, th, td {
+    border: .25rem ridge black;
+    padding: 1rem;
+}

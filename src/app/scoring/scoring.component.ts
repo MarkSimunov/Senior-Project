@@ -13,6 +13,7 @@ export class ScoringComponent implements OnInit {
   questionNum = 1;
   hide: boolean = false;
   scoreArray: number[] = [];
+  displayedColumns: string[] = ['Questions Submitted', 'Current Score'];
 
   startTime: Time;
   submissionTimes: Time[] = [];
