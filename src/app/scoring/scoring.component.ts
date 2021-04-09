@@ -11,6 +11,9 @@ export class ScoringComponent implements OnInit {
 
   score: number;
   questionNum = 1;
+  hide: boolean = false;
+  scoreArray: number[] = [];
+  displayedColumns: string[] = ['Questions Submitted', 'Current Score'];
 
   startTime: Time;
   submissionTimes: Time[] = [];
@@ -19,14 +22,28 @@ export class ScoringComponent implements OnInit {
   }
 
   submitScores(form: NgForm) {
+    if(!form.value.qTime) {
+      window.alert("Must enter in time for question to be submitted at");
+      return;
+    }
     this.startTime = form.value.start;
     this.submissionTimes.push(form.value.qTime);
-    this.score = this.calculateTotal();
-  }
-
-  addTimesToArray(form: NgForm){
-    this.submissionTimes.push(form.value.qTime);
+    if(this.calculateTotal() < 0) {
+      window.alert("Start time cannot be less than time of answered question");
+      this.submissionTimes.pop();
+      return;
+    }
+    for(var val of this.submissionTimes){
+      if(form.value.qTime < val){
+        window.alert("Cannot answer later question before previous question");
+        this.submissionTimes.pop();
+        return;
+      }
+    }
     this.questionNum++;
+    this.score = this.calculateTotal();
+    this.scoreArray.push(this.score);
+    console.log(this.scoreArray)
   }
 
   calculateTotal(): number {
@@ -35,7 +52,6 @@ export class ScoringComponent implements OnInit {
           return -1;
       } else {
           for (const i of this.submissionTimes) {
-            // console.log(this.getHoursMinutes(this.startTime));
             result += this.convertToMinutes(this.startTime, i);
           }
       }

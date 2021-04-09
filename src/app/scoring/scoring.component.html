@@ -16,11 +16,25 @@
        </div>
 
        <br>
-       <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="scoresForm.form.invalid" type="button" (click)="addTimesToArray(scoresForm)">Score Another Question</button>
         <button mat-button class="mat-raised-button" color="primary"
-        [disabled]="scoresForm.form.invalid" type="submit">Calculate Total Score</button>
+        [disabled]="scoresForm.form.invalid" type="submit">Input Question</button>
 
         <h3>Score: {{ score }}</h3>
+        <br>
+
+        <table>
+          <tr>
+            <th>Questions Submitted</th>
+            <th>Current Score</th>
+            <th>Submission Time</th>
+          </tr>
+          <tr *ngFor="let sc of scoreArray; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ sc }}</td>
+            <td>{{ submissionTimes[i] }}</td>
+          </tr>
+        </table>
+
+        
     </form>
 </div>
