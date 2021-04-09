@@ -21,31 +21,6 @@ export class ScoringComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTimesToArray(form: NgForm) {
-    if(!form.value.qTime) {
-      window.alert("Must enter in time for question to be submitted at");
-      return;
-    }
-    this.startTime = form.value.start;
-    this.submissionTimes.push(form.value.qTime);
-    for(var val of this.submissionTimes){
-      if(form.value.qTime < val){
-        window.alert("Cannot answer later question before previous question");
-        this.submissionTimes.pop();
-        return;
-      }
-    }
-    if(this.calculateTotal() < 0) {
-      window.alert("Start time cannot be less than time of answered question");
-      this.submissionTimes.pop();
-      return;
-    }
-    this.questionNum++;
-    this.score = this.calculateTotal();
-    
-    this.scoreArray.push(this.score);
-  }
-
   submitScores(form: NgForm) {
     if(!form.value.qTime) {
       window.alert("Must enter in time for question to be submitted at");
@@ -65,6 +40,7 @@ export class ScoringComponent implements OnInit {
         return;
       }
     }
+    this.questionNum++;
     this.score = this.calculateTotal();
     this.scoreArray.push(this.score);
     console.log(this.scoreArray)
