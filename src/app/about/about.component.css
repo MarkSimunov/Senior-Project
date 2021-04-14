@@ -8,7 +8,7 @@ h2.date {
     font-size: 1.25rem;
 }
 
-h6.contest_rules, .schedule {
+h6.schedule {
     text-align: center;
     font-size: 1.25rem;
 }
@@ -42,11 +42,6 @@ h6.lunch, .winning_team, .more_contest_rules, .orientation, .registration {
     font-size: .9375rem;
 }
 
-h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .standings_info, .prize_info {
-    text-align: left;
-    font-size: .9375rem;
-}
-
 .h2 {
     text-align: center;
     margin-top: auto;
@@ -59,8 +54,4 @@ h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .
     display: block;
     margin-left: 30rem;
     margin-right: 30rem;
-}
-
-div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
-    text-align: left;
 }

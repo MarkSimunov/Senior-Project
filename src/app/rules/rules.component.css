@@ -1,0 +1,13 @@
+h6.contest_rules {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+h6.materials_info, .computer_info, .problems_info, .testing_info, .judge_info, .standings_info, .prize_info {
+    text-align: left;
+    font-size: .9375rem;
+}
+
+div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
+    text-align: left;
+}
