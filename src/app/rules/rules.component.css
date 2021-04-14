@@ -1,5 +1,6 @@
 h6.contest_rules {
-    text-align: center;
+    text-align: left;
+    padding-left: 1rem;
     font-size: 1.25rem;
 }
 
