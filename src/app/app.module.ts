@@ -15,6 +15,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AccountGuard } from './account.guard';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ScoringComponent } from './scoring/scoring.component';
+import { RulesComponent } from './rules/rules.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ScoringComponent } from './scoring/scoring.component';
     HomeComponent,
     CreateAccountComponent,
     CreateQuestionsComponent,
-    ScoringComponent
+    ScoringComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,
