@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { AccountGuard } from './account.guard';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ScoringComponent } from './scoring/scoring.component';
-
+import { RulesComponent } from './rules/rules.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent }, 
   { path: "create-questions", component: CreateQuestionsComponent},
   { path: "scoring", component: ScoringComponent },
+  { path: "rules", component: RulesComponent},
   { path: "**", redirectTo: "/", pathMatch:"full"} //This needs to be the last route in the array
 ];
 
