@@ -215,6 +215,7 @@ div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
   height: 100%;
   transform: translate3d(0, 0, 0);
 }
+
 .tech-slideshow .mover-1 {
   animation: moveSlideshow 12s linear infinite;
 }
