@@ -206,9 +206,9 @@ div.computer, .materials, .problems, .testing, .judge, .standings, .prize {
 }
 
 .tech-slideshow > div {
-  height: 200px;
+  height: 500px;
   width: 2526px;
-  background: url(../../assets/images/wu_collage_final.jpg);
+  background: url(../../assets/images/final_WU4.jpg);
   position: absolute;
   top: 0;
   left: 0;
