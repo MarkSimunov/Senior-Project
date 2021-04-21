@@ -33,13 +33,6 @@ export class ScoringComponent implements OnInit {
       this.submissionTimes.pop();
       return;
     }
-    for(var val of this.submissionTimes){
-      if(form.value.qTime < val){
-        window.alert("Cannot answer later question before previous question");
-        this.submissionTimes.pop();
-        return;
-      }
-    }
     this.questionNum++;
     this.score = this.calculateTotal();
     this.scoreArray.push(this.score);

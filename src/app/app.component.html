@@ -6,9 +6,9 @@
         <a *ngIf="!isSignedIn" routerLink="/sign-in">Sign In</a>
         <a *ngIf="!isSignedIn" routerLink="/create-account">Create Account</a>
         <a routerLink="/about">About</a>
-        <a *ngIf="isSignedIn" routerLink="/create-questions">Create Questions</a>
-        <a routerLink="/scoring">Score Questions</a>
         <a routerLink="/rules">Rules</a>
+        <!-- <a *ngIf="isSignedIn" routerLink="/create-questions">Create Questions</a> -->
+        <a *ngIf="isSignedIn" routerLink="/scoring">Score Questions</a>
         <a *ngIf="isSignedIn" href="" (click)="logout()">Logout</a>
     </div>
 </mat-toolbar>

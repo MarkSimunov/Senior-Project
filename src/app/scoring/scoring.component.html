@@ -19,13 +19,13 @@
         <button mat-button class="mat-raised-button" color="primary"
         [disabled]="scoresForm.form.invalid" type="submit">Input Question</button>
 
-        <h3>Score: {{ score }}</h3>
+        <h3>Total Score: {{ score }}</h3>
         <br>
 
         <table>
           <tr>
             <th>Questions Submitted</th>
-            <th>Current Score</th>
+            <th>Total Score</th>
             <th>Submission Time</th>
           </tr>
           <tr *ngFor="let sc of scoreArray; index as i">
